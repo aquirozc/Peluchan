@@ -13,6 +13,8 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var top: UISegmentedControl!
+    @IBOutlet weak var spin: UIActivityIndicatorView!
+    
     
     // MARK: Fields
     
@@ -35,7 +37,20 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        showLoadingIndicator()
         fetchMorePost(after: nextId!)
+    }
+    
+    // MARK: Progress Indicator
+    
+    func showLoadingIndicator(){
+        table.isHidden = true
+        spin.isHidden = false
+    }
+    
+    func hideLoadingIndicator(){
+        table.isHidden = false
+        spin.isHidden = true
     }
     
     // MARK: Fetching
@@ -55,6 +70,7 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
                     self.nextId = payload.data.nextId
                     self.posts += payload.data.list
                     self.table.reloadData()
+                    self.hideLoadingIndicator()
                     self.isLoading = false
                 }
             } catch {
@@ -89,6 +105,7 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
         posts.removeAll()
         nextId = ""
         soft = FeedViewController.SORT_BY[i]
+        showLoadingIndicator()
         
         if i == 2 {
             isInTopSection = true
@@ -144,7 +161,7 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
         
-    }
+    } 
     
 }
 

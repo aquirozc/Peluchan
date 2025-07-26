@@ -159,6 +159,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bR7-a8-meQ">
+                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="osq-iv-J1T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -170,10 +173,13 @@
                             <constraint firstItem="IcL-oY-1p7" firstAttribute="centerX" secondItem="RML-bv-w6K" secondAttribute="centerX" id="Wvi-Tn-D6B"/>
                             <constraint firstItem="IcL-oY-1p7" firstAttribute="top" secondItem="osq-iv-J1T" secondAttribute="top" constant="16" id="Xbk-G2-WTT"/>
                             <constraint firstItem="wnb-9l-9tQ" firstAttribute="bottom" secondItem="osq-iv-J1T" secondAttribute="bottom" id="beW-nL-jMY"/>
+                            <constraint firstItem="bR7-a8-meQ" firstAttribute="centerY" secondItem="RML-bv-w6K" secondAttribute="centerY" id="qgH-89-WAY"/>
+                            <constraint firstItem="bR7-a8-meQ" firstAttribute="centerX" secondItem="RML-bv-w6K" secondAttribute="centerX" id="tsY-zc-ab0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BBu-hN-Vqn"/>
                     <connections>
+                        <outlet property="spin" destination="bR7-a8-meQ" id="qyI-YI-erW"/>
                         <outlet property="table" destination="wnb-9l-9tQ" id="rr0-T4-OuM"/>
                         <outlet property="top" destination="IcL-oY-1p7" id="qad-GW-cgb"/>
                     </connections>
