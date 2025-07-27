@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SDWebImage
+import SDWebImageAVIFCoder
+import SDWebImageWebPCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        SDImageCodersManager.shared.addCoder(SDImageWebPCoder.shared)
+        SDImageCodersManager.shared.addCoder(SDImageAVIFCoder.shared)
         return true
     }
 }

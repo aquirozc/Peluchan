@@ -15,15 +15,15 @@
 
 # --- Xcode ---
 # Exclude user-specific and build-related files.
-xcuserdata/                       # User-specific data
-*.xcscmblueprint                  # Source control configurations
-*.xccheckout                      # Versioned workspace data
-*.xcworkspace                     # Workspace data
-DerivedData/                      # Build data and intermediates
-*.xcodeproj/*.pbxuser             # User-specific project data
-*.xcodeproj/*.perspectivev3       # Perspective settings
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace
+DerivedData/
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.perspectivev3
 *.xcodeproj/xcuserdata/
-*.xcodeproj/project.xcworkspace/  # Internal workspace references
+*.xcodeproj/project.xcworkspace/
 
 # --- Swift Package Manager ---
 # Ignore Swift Package Manager build files and package resolution.

@@ -152,12 +152,14 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
             let post = comments[indexPath.row]
             cell.title?.text = post.author.name
             cell.subtitle?.text = post.body.content
+            cell.thumbnail?.sd_setImage(with: URL(string: "https://media.peluchan.net/cdn/profile/01JE0DPTRA88Z13F6Z0N09JWVJ.webp"))
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedItemCell", for: indexPath) as! FeedTableViewCell
             let post = posts[indexPath.row]
             cell.title?.text = post.title
             cell.subtitle?.text = post.author.name
+            cell.thumbnail?.sd_setImage(with: URL(string: "https://media.peluchan.net/cdn/post/thumbnail/01K18WQ89X4P1QHG0G64AXSW7A.avif"))
             return cell
         }
         
