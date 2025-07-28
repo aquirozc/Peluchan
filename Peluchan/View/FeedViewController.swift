@@ -11,10 +11,9 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: Outlets
     
-    @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var top: UISegmentedControl!
-    @IBOutlet weak var spin: UIActivityIndicatorView!
-    
+    @IBOutlet weak var table : UITableView!
+    @IBOutlet weak var top : UISegmentedControl!
+    @IBOutlet weak var spin : UIActivityIndicatorView!
     
     // MARK: Fields
     
@@ -39,6 +38,12 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidAppear(animated)
         showLoadingIndicator()
         fetchMorePost(after: nextId!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPost"{
+            (segue.destination as? PostViewController)?.id = sender as? String
+        }
     }
     
     // MARK: Progress Indicator
@@ -165,5 +170,9 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowPost", sender: indexPath.section < 2 ? posts[indexPath.row]._id : comments[indexPath.row].parent)
+    }
+
 }
 

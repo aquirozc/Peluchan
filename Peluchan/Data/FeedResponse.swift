@@ -32,6 +32,18 @@ struct CommentsApiResponse : Codable {
 
 }
 
+struct PostResponse : Codable {
+    
+    var data : Data
+    var error : Bool
+    var ms : Int
+    
+    struct Data : Codable {
+        var post : Post
+    }
+
+}
+
 struct Author : Codable {
     var name : String
     var photo : String
@@ -44,12 +56,15 @@ struct Body : Codable {
 struct Comment : Codable {
     var author : Author
     var body : Body
+    var parent : String
 }
 
 struct Post : Codable {
+    var _id : String
     var author : Author
     var title : String
     var portada : String?
+    var body : Body?
 }
 
 

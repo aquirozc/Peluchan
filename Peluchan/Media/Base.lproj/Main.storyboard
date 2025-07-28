@@ -112,7 +112,7 @@
                                             <outlet property="title" destination="4UO-HL-ZRn" id="Bkr-CA-Kim"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTopComment" rowHeight="100" id="v9D-oH-lbJ" customClass="FeedTableViewCell" customModule="Peluchan" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTopComment" focusStyle="custom" rowHeight="100" id="v9D-oH-lbJ" customClass="FeedTableViewCell" customModule="Peluchan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="768" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v9D-oH-lbJ" id="XcZ-gq-oHe">
@@ -182,14 +182,58 @@
                         <outlet property="spin" destination="bR7-a8-meQ" id="qyI-YI-erW"/>
                         <outlet property="table" destination="wnb-9l-9tQ" id="rr0-T4-OuM"/>
                         <outlet property="top" destination="IcL-oY-1p7" id="qad-GW-cgb"/>
+                        <segue destination="fX5-XR-URL" kind="show" identifier="ShowPost" id="qmf-Yl-F5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nef-H4-01d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679.20000000000005" y="454.43349753694582"/>
         </scene>
+        <!--Post View Controller-->
+        <scene sceneID="gdA-eP-CsH">
+            <objects>
+                <viewController id="fX5-XR-URL" customClass="PostViewController" customModule="Peluchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GNa-Of-c5g">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-n8-pbi">
+                                <rect key="frame" x="16" y="86" width="736" height="872"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SID-CJ-rY9">
+                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xa7-gN-LcL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xa7-gN-LcL" firstAttribute="bottom" secondItem="HNV-n8-pbi" secondAttribute="bottom" constant="16" id="2kL-La-3Yq"/>
+                            <constraint firstItem="HNV-n8-pbi" firstAttribute="leading" secondItem="Xa7-gN-LcL" secondAttribute="leading" constant="16" id="Hai-lQ-xlm"/>
+                            <constraint firstItem="HNV-n8-pbi" firstAttribute="top" secondItem="Xa7-gN-LcL" secondAttribute="top" constant="16" id="PW7-tc-gal"/>
+                            <constraint firstItem="Xa7-gN-LcL" firstAttribute="trailing" secondItem="HNV-n8-pbi" secondAttribute="trailing" constant="16" id="X08-iZ-nVg"/>
+                            <constraint firstItem="SID-CJ-rY9" firstAttribute="centerY" secondItem="GNa-Of-c5g" secondAttribute="centerY" id="lio-Jy-6Yd"/>
+                            <constraint firstItem="SID-CJ-rY9" firstAttribute="centerX" secondItem="GNa-Of-c5g" secondAttribute="centerX" id="zOO-YA-vSI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rzm-dN-Enb"/>
+                    <connections>
+                        <outlet property="spin" destination="SID-CJ-rY9" id="S2e-Gi-ZOT"/>
+                        <outlet property="text" destination="HNV-n8-pbi" id="8rP-tf-d93"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SNV-gG-6yG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1331.25" y="454.68749999999994"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
