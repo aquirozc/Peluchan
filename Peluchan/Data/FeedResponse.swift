@@ -33,7 +33,8 @@ struct CommentsApiResponse : Codable {
 }
 
 struct Author : Codable {
-    var name : String;
+    var name : String
+    var photo : String
 }
 
 struct Body : Codable {
