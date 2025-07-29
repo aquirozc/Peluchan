@@ -36,8 +36,10 @@ class FeedViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showLoadingIndicator()
-        fetchMorePost(after: nextId!)
+        if(posts.isEmpty){
+            showLoadingIndicator()
+            fetchMorePost(after: nextId!)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
