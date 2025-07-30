@@ -42,7 +42,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRG-f7-yFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="455"/>
+            <point key="canvasLocation" x="-68" y="455"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="ivb-Bt-h9V">
@@ -63,7 +63,7 @@
                                     <action selector="sort:" destination="1Xv-dH-A7d" eventType="valueChanged" id="zND-us-NVd"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-9l-9tQ">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-9l-9tQ">
                                 <rect key="frame" x="0.0" y="125" width="768" height="849"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -182,7 +182,7 @@
                         <outlet property="spin" destination="bR7-a8-meQ" id="qyI-YI-erW"/>
                         <outlet property="table" destination="wnb-9l-9tQ" id="rr0-T4-OuM"/>
                         <outlet property="top" destination="IcL-oY-1p7" id="qad-GW-cgb"/>
-                        <segue destination="fX5-XR-URL" kind="show" identifier="ShowPost" id="qmf-Yl-F5t"/>
+                        <segue destination="R6R-BI-wkJ" kind="show" identifier="ShowPost" id="8ot-h7-K6M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nef-H4-01d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -190,44 +190,44 @@
             <point key="canvasLocation" x="679.20000000000005" y="454.43349753694582"/>
         </scene>
         <!--Post View Controller-->
-        <scene sceneID="gdA-eP-CsH">
+        <scene sceneID="phE-T2-eqF">
             <objects>
-                <viewController id="fX5-XR-URL" customClass="PostViewController" customModule="Peluchan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GNa-Of-c5g">
+                <viewController id="R6R-BI-wkJ" customClass="PostViewController" customModule="Peluchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qDk-Nm-z1n">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-n8-pbi">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xpm-b9-c9p">
+                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rig-hR-d5t">
                                 <rect key="frame" x="16" y="86" width="736" height="872"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SID-CJ-rY9">
-                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Xa7-gN-LcL"/>
+                        <viewLayoutGuide key="safeArea" id="nfu-Qr-sqG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xa7-gN-LcL" firstAttribute="bottom" secondItem="HNV-n8-pbi" secondAttribute="bottom" constant="16" id="2kL-La-3Yq"/>
-                            <constraint firstItem="HNV-n8-pbi" firstAttribute="leading" secondItem="Xa7-gN-LcL" secondAttribute="leading" constant="16" id="Hai-lQ-xlm"/>
-                            <constraint firstItem="HNV-n8-pbi" firstAttribute="top" secondItem="Xa7-gN-LcL" secondAttribute="top" constant="16" id="PW7-tc-gal"/>
-                            <constraint firstItem="Xa7-gN-LcL" firstAttribute="trailing" secondItem="HNV-n8-pbi" secondAttribute="trailing" constant="16" id="X08-iZ-nVg"/>
-                            <constraint firstItem="SID-CJ-rY9" firstAttribute="centerY" secondItem="GNa-Of-c5g" secondAttribute="centerY" id="lio-Jy-6Yd"/>
-                            <constraint firstItem="SID-CJ-rY9" firstAttribute="centerX" secondItem="GNa-Of-c5g" secondAttribute="centerX" id="zOO-YA-vSI"/>
+                            <constraint firstItem="rig-hR-d5t" firstAttribute="leading" secondItem="nfu-Qr-sqG" secondAttribute="leading" constant="16" id="1eB-li-Ov7"/>
+                            <constraint firstItem="rig-hR-d5t" firstAttribute="top" secondItem="nfu-Qr-sqG" secondAttribute="top" constant="16" id="3nH-mV-6a4"/>
+                            <constraint firstItem="Xpm-b9-c9p" firstAttribute="centerX" secondItem="qDk-Nm-z1n" secondAttribute="centerX" id="GAi-SS-1P4"/>
+                            <constraint firstItem="nfu-Qr-sqG" firstAttribute="trailing" secondItem="rig-hR-d5t" secondAttribute="trailing" constant="16" id="I6p-ej-xbP"/>
+                            <constraint firstItem="nfu-Qr-sqG" firstAttribute="bottom" secondItem="rig-hR-d5t" secondAttribute="bottom" constant="16" id="VCp-5y-vJF"/>
+                            <constraint firstItem="Xpm-b9-c9p" firstAttribute="centerY" secondItem="qDk-Nm-z1n" secondAttribute="centerY" id="qOL-Ru-RWr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Rzm-dN-Enb"/>
+                    <navigationItem key="navigationItem" id="ZO1-A6-mHB"/>
                     <connections>
-                        <outlet property="spin" destination="SID-CJ-rY9" id="S2e-Gi-ZOT"/>
-                        <outlet property="text" destination="HNV-n8-pbi" id="8rP-tf-d93"/>
+                        <outlet property="body" destination="rig-hR-d5t" id="3jj-Of-GLI"/>
+                        <outlet property="spin" destination="Xpm-b9-c9p" id="bJf-pE-hF5"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SNV-gG-6yG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ijL-TO-gyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331.25" y="454.68749999999994"/>
+            <point key="canvasLocation" x="1430" y="455"/>
         </scene>
     </scenes>
     <resources>

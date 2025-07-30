@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import SDWebImage
 
 class HTMLParser{
@@ -57,7 +56,7 @@ class HTMLParser{
 
     """
     
-    func parseHTMLDocument(html : String, view : UITextView) {
+    static func parseHTMLDocument(html : String, view : UITextView) {
         
         do {
             

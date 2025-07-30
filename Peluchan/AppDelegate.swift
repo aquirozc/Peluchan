@@ -18,8 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        SDImageCodersManager.shared.addCoder(SDImageWebPCoder.shared)
-        SDImageCodersManager.shared.addCoder(SDImageAVIFCoder.shared)
+        
+        if #available(iOS 14.0, *) {} else {
+            SDImageCodersManager.shared.addCoder(SDImageWebPCoder.shared)
+            SDImageCodersManager.shared.addCoder(SDImageAVIFCoder.shared)
+        }
+        
         return true
     }
 }

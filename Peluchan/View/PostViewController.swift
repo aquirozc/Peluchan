@@ -13,13 +13,12 @@ class PostViewController : UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var spin : UIActivityIndicatorView!
-    @IBOutlet weak var text : UITextView!
+    @IBOutlet weak var spin : UIActivityIndicatorView?
+    @IBOutlet weak var body : UITextView?
     
     // MARK: Fields
     
     var id : String?
-    var ctx : UINavigationController?
     
     // MARK: Lifecycle
     
@@ -34,9 +33,9 @@ class PostViewController : UIViewController {
             URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
                 do {
                     let post = try JSONDecoder().decode(PostResponse.self, from: data!)
-                    var body = post.data.post.body?.content ?? HTMLParser.DEV_SAMPLE_TEXT
-                    body = body.replacingOccurrences(of: "s2://posts/", with: "https://media.peluchan.net/cdn/posts/")
-                    HTMLParser().parseHTMLDocument(html: body,view: self.text!)
+                    var content = post.data.post.body?.content ?? HTMLParser.DEV_SAMPLE_TEXT
+                    content = content.replacingOccurrences(of: "s2://posts/", with: "https://media.peluchan.net/cdn/posts/")
+                    HTMLParser.parseHTMLDocument(html: content,view: self.body!)
                     DispatchQueue.main.async {
                         self.hideLoadingIndicator()
                     }
@@ -50,16 +49,13 @@ class PostViewController : UIViewController {
     // MARK: Progress Indicator
     
     func showLoadingIndicator(){
-        text.isHidden = true
-        spin.isHidden = false
+        body?.isHidden = true
+        spin?.isHidden = false
     }
     
     func hideLoadingIndicator(){
-        text.isHidden = false
-        spin.isHidden = true
+        body?.isHidden = false
+        spin?.isHidden = true
     }
-    
-   
-    
     
 }
