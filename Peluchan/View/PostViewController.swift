@@ -19,6 +19,7 @@ class PostViewController : UIViewController {
     // MARK: Fields
     
     var id : String?
+    var i : Int = 0;
     
     // MARK: Lifecycle
     
@@ -45,6 +46,35 @@ class PostViewController : UIViewController {
         }
         
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let body = body else { return }
+        
+        let content = NSMutableAttributedString(attributedString: body.attributedText)
+        
+        content.enumerateAttribute(
+            .attachment,
+            in: NSRange(location: 0, length: content.length),
+            options: []
+        ) { (value, range, stop) in
+            if let attachment = value as? NSTextAttachment{
+                let scale = body.bounds.width / attachment.bounds.width
+                let size = CGSize(width: body.bounds.width, height: attachment.bounds.height * scale)
+                
+                let newAttachment = NSTextAttachment()
+                newAttachment.image = attachment.image
+                newAttachment.bounds = CGRect(origin: .zero, size: size)
+                
+                content.removeAttribute(.attachment, range: range)
+                content.addAttribute(.attachment, value: newAttachment, range: range)
+            }
+        }
+        
+        body.attributedText = content
+    }
+
     
     // MARK: Progress Indicator
     

@@ -197,32 +197,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xpm-b9-c9p">
-                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
-                            </activityIndicatorView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rig-hR-d5t">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rig-hR-d5t">
                                 <rect key="frame" x="16" y="86" width="736" height="872"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qX9-de-HcE">
+                                <rect key="frame" x="365.5" y="493.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nfu-Qr-sqG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rig-hR-d5t" firstAttribute="leading" secondItem="nfu-Qr-sqG" secondAttribute="leading" constant="16" id="1eB-li-Ov7"/>
                             <constraint firstItem="rig-hR-d5t" firstAttribute="top" secondItem="nfu-Qr-sqG" secondAttribute="top" constant="16" id="3nH-mV-6a4"/>
-                            <constraint firstItem="Xpm-b9-c9p" firstAttribute="centerX" secondItem="qDk-Nm-z1n" secondAttribute="centerX" id="GAi-SS-1P4"/>
                             <constraint firstItem="nfu-Qr-sqG" firstAttribute="trailing" secondItem="rig-hR-d5t" secondAttribute="trailing" constant="16" id="I6p-ej-xbP"/>
                             <constraint firstItem="nfu-Qr-sqG" firstAttribute="bottom" secondItem="rig-hR-d5t" secondAttribute="bottom" constant="16" id="VCp-5y-vJF"/>
-                            <constraint firstItem="Xpm-b9-c9p" firstAttribute="centerY" secondItem="qDk-Nm-z1n" secondAttribute="centerY" id="qOL-Ru-RWr"/>
+                            <constraint firstItem="qX9-de-HcE" firstAttribute="centerY" secondItem="qDk-Nm-z1n" secondAttribute="centerY" id="hJT-Es-WRz"/>
+                            <constraint firstItem="qX9-de-HcE" firstAttribute="centerX" secondItem="qDk-Nm-z1n" secondAttribute="centerX" id="o09-Mm-QMw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZO1-A6-mHB"/>
                     <connections>
                         <outlet property="body" destination="rig-hR-d5t" id="3jj-Of-GLI"/>
-                        <outlet property="spin" destination="Xpm-b9-c9p" id="bJf-pE-hF5"/>
+                        <outlet property="spin" destination="qX9-de-HcE" id="p0h-zn-Zfh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijL-TO-gyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
